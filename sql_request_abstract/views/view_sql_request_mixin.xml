@@ -94,6 +94,9 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                         <page name="page_note" string="Note">
                             <field name="note" nolabel="1" />
                         </page>
+                        <page name="page_results" string="Results">
+                            <field name="query_results_json" nolabel="1" widget="datatables"/>
+                        </page>
                     </notebook>
                 </sheet>
                 <div class="oe_chatter">

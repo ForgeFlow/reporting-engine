@@ -105,6 +105,8 @@ class SQLRequestMixin(models.AbstractModel):
         " access should be updated.",
     )
 
+    query_results_json = fields.Json()
+
     @api.onchange("group_ids")
     def onchange_group_ids(self):
         if self.state not in ("draft", "sql_valid"):

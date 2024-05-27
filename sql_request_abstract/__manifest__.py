@@ -11,7 +11,7 @@
     "license": "AGPL-3",
     "category": "Tools",
     "summary": "Abstract Model to manage SQL Requests",
-    "depends": ["mail"],
+    "depends": ["mail", "web_widget_datatables"],
     "data": [
         "security/ir_module_category.xml",
         "security/res_groups.xml",
