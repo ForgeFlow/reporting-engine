@@ -4,6 +4,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 import base64
+import json
 import logging
 import re
 import uuid
@@ -225,6 +226,23 @@ class SQLRequestMixin(models.AbstractModel):
             self._rollback_savepoint(rollback_name)
 
         return res
+
+    # Method to fetch SQL query data and store in query_results_json
+    def get_sql_query_data(self):
+        try:
+            result = self._execute_sql_request(params={}, mode="fetchall", header=True)
+            if not result:
+                return json.dumps({"header": [], "rows": {}})
+
+            columns = result[0] if result else []
+            rows = {str(index): row for index, row in enumerate(result[1:])}
+
+            query_results_json = json.dumps({"header": columns, "rows": rows})
+
+            # Return the JSON result
+            return query_results_json
+        except Exception as e:
+            raise UserError(_("Error executing SQL query: %s")) from e
 
     # Private Section
     @api.model
