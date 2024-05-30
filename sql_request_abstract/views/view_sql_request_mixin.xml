@@ -62,7 +62,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                     <notebook>
                         <page name="page_sql" string="SQL Settings">
                             <group string="SQL Query" name="group_query">
-                            <field
+                                <field
                                     name="query"
                                     nolabel="1"
                                     colspan="2"
@@ -70,15 +70,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                     widget="ace"
                                     options="{'mode': 'pgsql'}"
                                 />
-                        </group>
-                        <group string="Result" name="group_result">
-                            <field
-                                    colspan="2"
-                                    name="query_results_json"
-                                    nolabel="1"
-                                    widget="datatables"
-                                />
-                        </group>
+                            </group>
                         </page>
                         <page name="page_security" string="Security">
                             <group string="Allowed Groups" name="group_allowed_groups">

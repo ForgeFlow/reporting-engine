@@ -227,27 +227,25 @@ class SQLRequestMixin(models.AbstractModel):
 
         return res
 
-    # Method to fetch SQL query data and store in query_results_json
-    def get_sql_query_data(self):
+    def calc_sql_query(self, variable_dict=False):
         if self.state == "sql_valid":
             try:
-                result = self._execute_sql_request(
-                    params={}, mode="fetchall", header=True
+                data = self._execute_sql_request(
+                    params=variable_dict,
+                    mode="fetchall",
+                    copy_options=self.copy_options,
+                    header=True,
                 )
-                if not result:
-                    return json.dumps({"header": [], "rows": {}})
-
-                columns = result[0] if result else []
-                rows = {str(index): row for index, row in enumerate(result[1:])}
-
+                columns = data[0] if data else []
+                rows = {str(index): row for index, row in enumerate(data[1:])}
                 self.query_results_json = json.dumps(
                     {"header": columns, "rows": rows}, default=str
                 )
-
-                # Return the JSON result
             except Exception as e:
-                raise UserError(_("Error executing SQL query: %s")) from e
-        return self.query_results_json
+                raise UserError(_("Error parsing SQL query: %s")) from e
+
+    def get_sql_query_data(self):
+        return self.query_results_json if self.state == "sql_valid" else False
 
     # Private Section
     @api.model
