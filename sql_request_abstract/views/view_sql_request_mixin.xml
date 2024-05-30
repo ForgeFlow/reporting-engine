@@ -71,6 +71,14 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                     options="{'mode': 'pgsql'}"
                                 />
                         </group>
+                        <group string="Result" name="group_result">
+                            <field
+                                    colspan="2"
+                                    name="query_results_json"
+                                    nolabel="1"
+                                    widget="datatables"
+                                />
+                        </group>
                         </page>
                         <page name="page_security" string="Security">
                             <group string="Allowed Groups" name="group_allowed_groups">
@@ -93,9 +101,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                         </page>
                         <page name="page_note" string="Note">
                             <field name="note" nolabel="1" />
-                        </page>
-                        <page name="page_results" string="Results">
-                            <field name="query_results_json" nolabel="1" widget="datatables"/>
                         </page>
                     </notebook>
                 </sheet>
