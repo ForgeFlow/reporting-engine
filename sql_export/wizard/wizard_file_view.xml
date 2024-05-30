@@ -13,6 +13,17 @@
                     required="1"
                 />
                     <separator
+                    string="Preview"
+                    colspan="4"
+                    invisible="not binary_file"
+                />
+                        <field
+                    colspan="2"
+                    name="query_results_json"
+                    nolabel="1"
+                    widget="datatables"
+                />
+                    <separator
                     string="Export file"
                     colspan="4"
                     invisible="not binary_file"
@@ -23,9 +34,9 @@
                     <footer>
                         <button
                         name="export_sql"
-                        string="Export"
+                        string="Execute"
                         type="object"
-                        icon="fa-download"
+                        icon="fa-play"
                     />
                         or
                         <button

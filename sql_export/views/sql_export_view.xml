@@ -12,7 +12,7 @@
                 <field name="use_properties" invisible="1" />
             </field>
             <button name="button_preview_sql_expression" position="attributes">
-                <attribute name="invisible">use_properties</attribute>
+                <attribute name="invisible">1</attribute>
             </button>
             <xpath expr="//header" position="inside">
                 <button

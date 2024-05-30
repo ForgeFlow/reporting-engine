@@ -21,6 +21,10 @@ class SqlFileWizard(models.TransientModel):
         definition="sql_export_id.query_properties_definition",
         copy=False,
     )
+    query_results_json = fields.Json(related="sql_export_id.query_results_json")
+
+    def get_sql_query_data(self):
+        return self.sql_export_id.get_sql_query_data()
 
     def export_sql(self):
         self.ensure_one()

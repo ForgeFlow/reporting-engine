@@ -79,6 +79,7 @@ class SqlExport(models.Model):
         res = self._execute_sql_request(
             params=variable_dict, mode="stdout", copy_options=self.copy_options
         )
+        self.calc_sql_query(variable_dict=variable_dict)
         if self.encoding:
             res = res.decode(self.encoding)
         return res
