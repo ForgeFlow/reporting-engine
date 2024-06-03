@@ -22,6 +22,7 @@
                     name="query_results_json"
                     nolabel="1"
                     widget="datatables"
+                    class="w-100"
                 />
                     <separator
                     string="Export file"
