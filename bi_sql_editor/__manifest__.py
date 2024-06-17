@@ -21,5 +21,6 @@
     "demo": ["demo/res_groups_demo.xml", "demo/bi_sql_view_demo.xml"],
     "installable": True,
     "uninstall_hook": "uninstall_hook",
+    "post_init_hook": "post_init_hook",
     "maintainers": ["legalsylvain"],
 }
