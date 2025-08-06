@@ -10,7 +10,7 @@ def migrate(env, version):
     if not column_exists(env.cr, "base_comment_template", "models"):
         openupgrade.logged_query(
             env.cr,
-            "ALTER TABLE report_paperformat_label ADD COLUMN name char",
+            "ALTER TABLE report_paperformat_label ADD COLUMN name varchar",
         )
         openupgrade.logged_query(
             env.cr,
