@@ -5,4 +5,3 @@
 * Foram Shah <foram.shah@initos.com>
 * Emiel van Bokhoven <emiel@360erp.nl>
 * Anjeel Haria
-* Hugo Martínez <hugo.martinez@netkia.es>

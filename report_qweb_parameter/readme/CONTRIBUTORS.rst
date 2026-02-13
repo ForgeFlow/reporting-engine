@@ -5,7 +5,3 @@
     * Carlos Roca
 
 * Iván Antón <ozono@ozonomultimedia.com>
-
-* `Sygel Technology <https://www.sygel.es>`_:
-
-    * Valentin Vinagre

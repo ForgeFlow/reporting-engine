@@ -14,7 +14,6 @@ class ResPartner(models.Model):
         column1="res_partner_id",
         column2="base_comment_template_id",
         string="Comment Templates",
-        domain=[("global_template", "=", False)],
         help="Specific partner comments that can be included in reports",
     )
 

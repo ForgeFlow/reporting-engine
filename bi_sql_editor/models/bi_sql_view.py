@@ -188,7 +188,6 @@ class BiSQLView(models.Model):
         readonly=True,
         help="Cron Task that will refresh the materialized view",
         ondelete="cascade",
-        copy=False,
     )
 
     rule_id = fields.Many2one(string="Odoo Rule", comodel_name="ir.rule", readonly=True)
